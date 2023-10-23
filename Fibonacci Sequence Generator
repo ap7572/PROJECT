@@ -1,0 +1,21 @@
+# Fibonacci sequence generator
+
+def generate_fibonacci(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+if __name__ == "__main__":
+    try:
+        length = int(input("Enter the length of the Fibonacci sequence: "))
+        if length <= 0:
+            print("Please enter a positive integer.")
+        else:
+            result = generate_fibonacci(length)
+            print("Fibonacci Sequence:")
+            print(result)
+    except ValueError:
+        print("Invalid input. Please enter a positive integer.")
